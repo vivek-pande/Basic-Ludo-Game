@@ -1,23 +1,52 @@
+var count = 1;
+
 let diceRollout = function () {
-  let y = Math.floor(Math.random() * 10);
-  //   console.log('y first :>> ', y);
-  while (y >= 7 || y === 0) {
-    y = Math.floor(Math.random() * 10);
-    // console.log('y while :>> ', y );
-  }
+  if (count === 1) {
+    player1.classList.remove("noColor");
+    player1.classList.add("colorChange");
+    player2.classList.add("noColor");
 
-  btn.innerHTML = y;
+    let y = Math.floor(Math.random() * 10);
+    while (y >= 7 || y == 0) {
+      y = Math.floor(Math.random() * 10);
+    }
 
-  let x = y;
+    btn.innerHTML = y;
 
-  if (x === 6) {
+    let x = y;
+
+    if (x === 6) {
       digit1.innerHTML = 10;
-      player1.classList.add("colorchange");
+    }
+    console.log("count :>> ", count);
+    return (count = 2);
   }
-//   let rem=function(){
-//       btn.removeEventListener("click", diceRollout)
-//   }
-//   timeout=setTimeout(rem,1000)
+
+  if (count === 2) {
+    player2.classList.remove("noColor");
+    player2.classList.add("colorChange");
+    player1.classList.add("noColor");
+
+    let y = Math.floor(Math.random() * 10);
+    while (y >= 7 || y == 0) {
+      y = Math.floor(Math.random() * 10);
+    }
+
+    btn.innerHTML = y;
+
+    let x = y;
+
+    if (x === 6) {
+      digit2.innerHTML = 10;
+    }
+    console.log("count :>> ", count);
+    return (count = 1);
+  }
+
+  //   let rem=function(){
+  //       btn.removeEventListener("click", diceRollout)
+  //   }
+  //   timeout=setTimeout(rem,1000)
 };
 
 let btn = document.querySelector(".btn");

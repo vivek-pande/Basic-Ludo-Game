@@ -76,6 +76,12 @@ border-radius: 20px;
 
 }
 
-.colorchange{
+.colorChange{
     background-color: green;
+}
+
+.noColor{
+    background-color: beige;
+    
+
 }
