@@ -6,17 +6,21 @@ let diceRollout = function () {
     player1.classList.add("colorChange");
     player2.classList.add("noColor");
 
-    let y = Math.floor(Math.random() * 10);
-    while (y >= 7 || y == 0) {
-      y = Math.floor(Math.random() * 10);
+    let diceNumber = Math.floor(Math.random() * 10);
+    while (diceNumber >= 7 || diceNumber == 0) {
+      diceNumber = Math.floor(Math.random() * 10);
     }
 
-    btn.innerHTML = y;
+    btn.innerHTML = diceNumber;
 
-    let x = y;
+    let score = diceNumber;
 
-    if (x === 6) {
-      digit1.innerHTML = 10;
+    if (score === 6) {
+      digit1.innerHTML = Math.floor(10 + Math.floor(digit1.innerHTML));
+    }
+    if (digit1.innerHTML == 50) {
+      btn.removeEventListener("click", diceRollout);
+      return alert("player-1 wins");
     }
     console.log("count :>> ", count);
     return (count = 2);
@@ -27,17 +31,22 @@ let diceRollout = function () {
     player2.classList.add("colorChange");
     player1.classList.add("noColor");
 
-    let y = Math.floor(Math.random() * 10);
-    while (y >= 7 || y == 0) {
-      y = Math.floor(Math.random() * 10);
+    let diceNumber = Math.floor(Math.random() * 10);
+    while (diceNumber >= 7 || diceNumber == 0) {
+      diceNumber = Math.floor(Math.random() * 10);
     }
 
-    btn.innerHTML = y;
+    btn.innerHTML = diceNumber;
 
-    let x = y;
+    let score = diceNumber;
 
-    if (x === 6) {
-      digit2.innerHTML = 10;
+    if (score === 6) {
+      digit2.innerHTML = Math.floor(10 + Math.floor(digit2.innerHTML));
+    }
+
+    if (digit2.innerHTML == 50) {
+      btn.removeEventListener("click", diceRollout);
+      return alert("player-2 wins");
     }
     console.log("count :>> ", count);
     return (count = 1);
