@@ -11,12 +11,20 @@
   margin-left: 15%;
   margin-top: 5%;
 }
+.header{
+  text-align: center;
+  font-size: 30px;
+  
+  
+}
 
 .score {
   display: flex;
   justify-content: space-around;
   font-size: 40px;
   margin: 40px 0;
+  gap: 27%;
+  color: #fff;
 }
 .score1 {
   padding: 20px;
@@ -71,9 +79,10 @@
 }
 
 .colorChange {
-  background-color: green;
+  box-shadow: 0px 0px 6px 16px rgb(14 223 101);
 }
 
 .noColor {
-  background-color: beige;
+  /* background-color: beige; */
+  box-shadow: none;
 }
